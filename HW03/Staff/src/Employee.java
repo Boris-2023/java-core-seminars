@@ -84,6 +84,13 @@ public class Employee {
         this.salary += amount;
     }
 
+    /**
+     * @param date1 1st date as int[] {YYYY, MM, DD}
+     * @param date2 2nd date as int[] {YYYY, MM, DD}
+     * @return result of dates comparison: 1 if the dates are consequent; -1 if 1st date is later than the 2nd; 0 if the dates are equal
+     * @apiNote comparing two dates
+     * @see Employee#compareDates(int[], int[]) 
+     */
     //    Задание 1
     //    Написать прототип компаратора - метод внутри класса сотрудника, сравнивающий две даты,
     //    представленные в виде трёх чисел гггг-мм-дд, без использования условного оператора.
@@ -91,10 +98,10 @@ public class Employee {
         int d1 = date1[0] * 10000 + date1[1] * 100 + date1[2];
         int d2 = date2[0] * 10000 + date2[1] * 100 + date2[2];
 
-        int diff = d1 - d2;
+        int diff = d2 - d1;
 
         try {
-            return -diff / Math.abs(diff);
+            return diff / Math.abs(diff);
         } catch (Exception e) {
             return 0;
         }
