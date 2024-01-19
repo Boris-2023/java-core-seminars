@@ -30,8 +30,8 @@ public class Main {
         System.out.println("\n5 лучших студентов (средний бал >= 4.5; специальность \"Информатика\":");
         students
                 .stream()
-                .filter(e -> e.getSpecialty().equals("Информатика"))
-                .filter(e -> e.getAverageGrade() >= 4.5)
+                .filter(e -> e.getSpecialty().equals("Информатика") && e.getAverageGrade() >= 4.5)
+//                .filter(e -> e.getAverageGrade() >= 4.5)
                 .sorted(Comparator.comparing(Student::getAverageGrade).reversed())
                 .map(Student::toString)
                 .limit(5)
